@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spending Tracker</title>
+</head>
+<body>
+    <h1>Add a new spending</h1>
+    <form method="POST" action="/add">
+        <input type="text" name="description" placeholder="Description" required>
+        <input type="text" name="amount" placeholder="Amount" required>
+        <button type="submit">Add Spending</button>
+    </form>
+
+    <h2>Previous Spendings:</h2>
+    <ul>
+        {% for spending in spendings %}
+            <li>{{ spending.description }} - ${{ spending.amount }}</li>
+        {% else %}
+            <li>No spendings found</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Total Spendings: ${{ total_spendings }}</h3>
+</body>
+</html>
