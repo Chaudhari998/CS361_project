@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spending Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Personal Finance Tracker</h1>
+    <h2>Add a New Transaction</h2>
+    <form method="POST" action="/add" id="spendingForm">
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" placeholder="e.g., Groceries" required>
+        <label for="amount">Amount ($):</label>
+        <input type="number" id="amount" name="amount" placeholder="e.g., 50.00" required min="0.01" step="0.01">
+        <button type="submit">Add Transaction</button>
+    </form>
+    
+    <!-- Confirmation or Error Message -->
+    <div id="message"></div>
+    
+    <h2>Transactions:</h2>
+    <ul>
+        <!-- Existing transactions list -->
+        {% for spending in spendings %}
+            <li>{{ spending.description }}: ${{ spending.amount }}</li>
+            <!-- Option to Edit/Delete for Reversibility -->
+            <button onclick="editSpending('{{ loop.index0 }}')">Edit</button>
+            <button onclick="deleteSpending('{{ loop.index0 }}')">Delete</button>
+        {% else %}
+            <li>No transactions found.</li>
+        {% endfor %}
+    </ul>
+    
+    <h3>Total Spendings: ${{ total_spendings }}</h3>
+    
+    <script>
+        function editSpending(index) {
+            // JavaScript function to handle spending edits.
+        }
+        
+        function deleteSpending(index) {
+            // JavaScript function to handle spending deletion.
+        }
+        
+        // Form submission feedback
+        document.getElementById('spendingForm').onsubmit = function() {
+            // Informative feedback here.
+        };
+    </script>
+</body>
+</html>
