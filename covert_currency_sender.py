@@ -4,7 +4,7 @@ import subprocess
 
 
 def execute_receiver():
-    file_path = "convert_currency_receiver.py"
+    file_path = "./convert_currency_receiver.py"
     try:
         subprocess.Popen(['python', file_path], shell=True)
     except:
