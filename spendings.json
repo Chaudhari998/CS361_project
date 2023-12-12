@@ -6,5 +6,21 @@
     {
         "description": "Meat",
         "amount": "60"
+    },
+    {
+        "description": "computer",
+        "amount": "1000"
+    },
+    {
+        "description": "Chicken Breast",
+        "amount": "25"
+    },
+    {
+        "description": "Gucci belt",
+        "amount": "600"
+    },
+    {
+        "description": "Steak",
+        "amount": "50"
     }
 ]
